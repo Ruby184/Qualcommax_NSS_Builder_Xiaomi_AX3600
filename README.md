@@ -50,6 +50,26 @@ The firmware comes with a highly optimized SQM configuration out of the box. The
 
 The SSH daemon (`sshd`) is configured to reject legacy and insecure connection attempts. If you are unable to connect with an older client, please update your SSH client to support modern algorithms (e.g., Ed25519, chacha20-poly1305).
 
+### Custom Packages
+
+The firmware includes additional packages for VPN and dynamic DNS support:
+
+#### **WireGuard VPN Server**
+- **Packages**: `kmod-wireguard`, `wireguard-tools`, `luci-app-wireguard`, `luci-proto-wireguard`, `qrencode`
+- **Features**:
+  - Kernel-level VPN implementation with superior performance
+  - Web UI for easy configuration and management
+  - QR code generation for peer device enrollment
+- **Official Docs**: [WireGuard Installation Guide](https://openwrt.org/docs/guide-user/services/vpn/wireguard/start), [OpenWrt WireGuard Package](https://openwrt.org/docs/guide-user/services/vpn/wireguard/server)
+
+#### **Dynamic DNS with deSEC**
+- **Packages**: `ddns-scripts`, `luci-app-ddns`
+- **Features**:
+  - Built-in support for deSEC provider (no additional configuration files required)
+  - Automatic public IP updates
+  - Web UI for managing DDNS services
+- **Official Docs**: [DDNS Installation Guide](https://openwrt.org/docs/guide-user/services/ddns/client), [deSEC API Documentation](https://desec.readthedocs.io/)
+
 ---
 
 ## 🏗️ Build Process
